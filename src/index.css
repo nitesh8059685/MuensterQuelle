@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 30% 7%;
+    --foreground: 160 30% 92%;
+    --card: 195 25% 11%;
+    --card-foreground: 160 30% 92%;
+    --popover: 195 25% 11%;
+    --popover-foreground: 160 30% 92%;
+    --primary: 168 72% 42%;
+    --primary-foreground: 200 30% 7%;
+    --secondary: 195 20% 15%;
+    --secondary-foreground: 160 30% 92%;
+    --muted: 195 18% 18%;
+    --muted-foreground: 160 15% 55%;
+    --accent: 30 60% 55%;
+    --accent-foreground: 200 30% 7%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 195 15% 20%;
+    --input: 195 15% 20%;
+    --ring: 168 72% 42%;
+    --radius: 1rem;
+    --community: 350 80% 58%;
+    --community-foreground: 210 40% 98%;
+    --warm: 30 60% 55%;
+    --warm-foreground: 200 30% 7%;
+    --sidebar-background: 195 25% 9%;
+    --sidebar-foreground: 160 30% 92%;
+    --sidebar-primary: 168 72% 42%;
+    --sidebar-primary-foreground: 200 30% 7%;
+    --sidebar-accent: 195 20% 15%;
+    --sidebar-accent-foreground: 160 30% 92%;
+    --sidebar-border: 195 15% 20%;
+    --sidebar-ring: 168 72% 42%;
+    --font-heading: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* MapLibre popup */
+.maplibregl-popup-content {
+  background: hsl(195 25% 11% / 0.95) !important;
+  color: hsl(160 30% 92%) !important;
+  border: 1px solid hsl(195 15% 22%) !important;
+  border-radius: 16px !important;
+  padding: 0 !important;
+  font-family: var(--font-body) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04) !important;
+  max-width: 300px !important;
+  backdrop-filter: blur(12px) !important;
+  overflow: hidden !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: hsl(195 25% 11% / 0.95) !important;
+}
+.maplibregl-popup-close-button {
+  color: hsl(160 30% 92%) !important;
+  font-size: 20px !important;
+  padding: 8px 12px !important;
+  z-index: 10 !important;
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(4, 13, 26, 0.7) !important;
+  color: hsl(160 15% 55%) !important;
+  font-size: 10px !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: hsl(168 72% 42%) !important;
+}
+
+.water-marker {
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 3px 8px rgba(0, 180, 155, 0.3));
+}
+.water-marker:hover {
+  transform: scale(1.2);
+}
+.community-marker {
+  filter: drop-shadow(0 3px 8px rgba(244, 63, 94, 0.35));
+}
+.grey-marker {
+  filter: drop-shadow(0 3px 8px rgba(107, 114, 128, 0.3));
+  opacity: 0.7;
+}
+
+/* Route line pulse */
+@keyframes route-pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}

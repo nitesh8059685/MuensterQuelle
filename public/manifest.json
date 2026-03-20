@@ -1,0 +1,16 @@
+{
+  "name": "MünsterQuelle",
+  "short_name": "MünsterQuelle",
+  "description": "Find free drinking water refill stations in Münster",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040d1a",
+  "theme_color": "#040d1a",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
